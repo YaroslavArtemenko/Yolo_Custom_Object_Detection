@@ -4,4 +4,4 @@
 
 #### file "Object_detect_trainingYOLO.ipynb" is for Training 
 #### files "photo.py", "video.py" and "webcam.py" are for objeckt detection
-#### file "yolo_roi_tkinter.py" is for object detection in ROI
+#### file "yolo_roi_tkinter.py" is for object detection in ROI with live video streaming 
