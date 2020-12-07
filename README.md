@@ -21,3 +21,5 @@ If you want to run a project, then you need to create a yolo-coco folder and put
 * yolo3.cfg
 * yolo3.weight
 * coco.names 
+
+To install libs type `pip install -r requirements.txt`
