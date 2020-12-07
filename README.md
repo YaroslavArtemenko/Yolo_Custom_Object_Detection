@@ -12,6 +12,12 @@ yolo3_custom.cfg| configuration file for custom model
 yolo3_custom_6000.weight | weight for custom model
 
 _____________________________________________________
+
 * file "Object_detect_trainingYOLO.ipynb" is for Training 
 * files "photo.py", "video.py" and "webcam.py" are for objeckt detection
 * file "yolo_roi_tkinter.py" is for object detection in ROI with live video streaming 
+
+If you want to run a project, then you need to create a yolo-coco folder and put certain files in it. For general recognition of the objects used in yolo-coco download the files: 
+* yolo3.cfg
+* yolo3.weight
+* coco.names 
