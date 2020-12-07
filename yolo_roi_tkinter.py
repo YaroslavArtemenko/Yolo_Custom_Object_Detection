@@ -7,7 +7,7 @@ from tkinter import *
 from itertools import chain
 
 import PIL
-from PIL import Image,ImageTk
+from PIL import Image, ImageTk
 
 root = Tk()
 root.geometry('1000x1080')
@@ -16,7 +16,7 @@ cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
 frame = Frame(root, relief=RIDGE, borderwidth=2)
-frame.pack(side=LEFT,fill=Y, expand=1)
+frame.pack(side=LEFT, fill=Y, expand=1)
 root.title('Yolo Live Detection')
 frame.config(background='light blue')
 label = Label(frame, text="Yolo Detection", bg='light blue', font=('Times 35 bold'))
@@ -27,9 +27,9 @@ lmain = Label(root)
 lmain.pack(side=RIGHT)
 
 
-
 def exitt():
     exit()
+
 
 ref_point = []
 crop = False
@@ -38,6 +38,7 @@ net = cv2.dnn.readNet('yolo-coco/yolov3.weights', 'yolo-coco/yolov3.cfg')
 classes = []
 with open('yolo-coco/coco.names', 'r') as f:
     classes = f.read().splitlines()
+
 
 def shape_selection(event, x, y, flags, param):
     # grab references to the global variables
@@ -58,6 +59,7 @@ def shape_selection(event, x, y, flags, param):
         # draw a rectangle around the region of interest
 
         # cv2.imshow("image", img)
+
 
 def draw():
     rect_img = img[ref_point[0][1]:ref_point[1][1], ref_point[0][0]:ref_point[1][0]]
@@ -132,6 +134,7 @@ cap = cv2.VideoCapture(0)
 global rectangles_list
 rectangles_list = []
 
+
 def show_frame():
     _, img = cap.read()
     cv2image = cv2.cvtColor(img, cv2.COLOR_BGR2RGBA)
@@ -144,7 +147,6 @@ def show_frame():
         draw()
 
     lmain.after(10, show_frame)
-
 
 
 def webdet():
@@ -169,8 +171,8 @@ def webdet():
     # cv2.destroyAllWindows()
 
 
-
-but1 = Button(frame, padx=5, pady=5, width=20, bg='white', fg='black', relief=GROOVE, command=show_frame, text='Open Cam',
+but1 = Button(frame, padx=5, pady=5, width=20, bg='white', fg='black', relief=GROOVE, command=show_frame,
+              text='Open Cam',
               font=('helvetica 15 bold'))
 but1.place(x=5, y=104)
 
@@ -183,4 +185,3 @@ but5 = Button(frame, padx=5, pady=5, width=5, bg='white', fg='black', relief=GRO
 but5.place(x=210, y=478)
 
 root.mainloop()
-

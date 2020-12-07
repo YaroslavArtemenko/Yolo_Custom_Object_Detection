@@ -7,7 +7,7 @@ classes = []
 with open('yolo-coco/coco.names', 'r') as f:
     classes = f.read().splitlines()
 
-img = cv2.imread('dog.jpg')
+img = cv2.imread('dogs.jpg')
 height, width, _ = img.shape
 
 blob = cv2.dnn.blobFromImage(img, 1/255, (416,416), (0,0,0), swapRB=True, crop=False)
